@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+{% include "header.html" %}
+
+<html>
+<body>
+    {% include "nav.html" %}
+
+    <div class="col text-center intro-text intro-banner"id="intro-page">
+        <div id="centering-new-lines">
+            <br>
+        </div>
+        <p class="animated zoomIn" id="home-text">I ❤️ <br/> {{topic}}.</p>
+        
+  </div> 
+
+          <a id="scroll" href="#about">
+        <img height="100" width="100" src="{{url_for('static', filename='img/arrow-white.svg')}}"/> 
+        </a>
+
+
+
+
+
+          <div class="container-fluid">
+                <div class="row">
+                  <div class="col" id="about">
+                    <h2 id="about"> Learn about the Doggo </h2>
+                    <br/>
+                    <div class="card">
+                            <div class="card-header">
+                              About {{title}}
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">{{title}}</h5>
+                              <p class="card-text">{{definition}}</p>
+                              <a href="{{definition_link}}" class="btn btn-primary">Learn more</a>
+                            </div>
+                          </div>
+                    <br/>
+
+                    <br/>
+                
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="resources">
+                        <h2> Resources</h2>
+                        {{resources|safe or "We currently don't have any resources for this topic"}} 
+                        <p> Dog photos provided by <a href="https://unsplash.com/">Unsplash</a>. </p>
+                    </div>
+                </div>
+            </div> 
+
+      <script>
+        var colors = ['#F44336','#EE5A24', '#e84118'];
+    var random_color = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = random_color;
+    </script>
+{% include "footer.html" %}
+</body>
+</html>
